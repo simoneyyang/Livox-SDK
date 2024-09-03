@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.0)
 
-set(SDK_LIBRARY ${PROJECT_NAME}_static)
-add_library(${SDK_LIBRARY} STATIC "")
+set(SDK_LIBRARY ${PROJECT_NAME}_shared)
+add_library(${SDK_LIBRARY} SHARED "")
 
 set(LIVOX_SDK_MAJOR_VERSION "2")
 set(LIVOX_SDK_MINOR_VERSION "3")
@@ -27,9 +27,9 @@ else(WIN32)
 endif (WIN32)
 
 target_compile_options(${SDK_LIBRARY}
-        PRIVATE $<$<CXX_COMPILER_ID:GNU>:-Wall -Werror -Wno-c++11-long-long>
-        PRIVATE $<$<CXX_COMPILER_ID:AppleClang>:-Wno-unknown-pragmas -Wall -Werror -Wno-c++11-long-long>
-        PRIVATE $<$<CXX_COMPILER_ID:Clang>:-Wno-unknown-pragmas -Wall -Werror -Wno-c++11-long-long>)
+        PRIVATE $<$<CXX_COMPILER_ID:GNU>:-Wall -Werror -Wno-c++11-long-long -Wno-c++20-compat>
+        PRIVATE $<$<CXX_COMPILER_ID:AppleClang>:-Wno-unknown-pragmas -Wall -Werror -Wno-c++11-long-long -Wno-c++20-compat>
+        PRIVATE $<$<CXX_COMPILER_ID:Clang>:-Wno-unknown-pragmas -Wall -Werror -Wno-c++11-long-long -Wno-c++20-compat>)
 
 target_sources(${SDK_LIBRARY}
         PRIVATE
