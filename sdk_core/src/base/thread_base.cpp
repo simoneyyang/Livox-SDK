@@ -24,6 +24,7 @@
 
 #include "thread_base.h"
 #include <thread>
+#include <memory>
 
 namespace livox {
 
