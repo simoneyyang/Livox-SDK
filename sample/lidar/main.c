@@ -47,18 +47,17 @@ typedef struct {
 DeviceItem devices[kMaxLidarCount];
 uint32_t data_recveive_count[kMaxLidarCount];
 
-/** Connect all the broadcast device. */
+/** Connect all the broadcast device. 
 int lidar_count = 0;
 char broadcast_code_list[kMaxLidarCount][kBroadcastCodeSize];
+*/
 
 /** Connect the broadcast device in list, please input the broadcast code and modify the BROADCAST_CODE_LIST_SIZE. */
-/*#define BROADCAST_CODE_LIST_SIZE  3
+#define BROADCAST_CODE_LIST_SIZE  1
 int lidar_count = BROADCAST_CODE_LIST_SIZE;
 char broadcast_code_list[kMaxLidarCount][kBroadcastCodeSize] = {
-  "000000000000002",
-  "000000000000003",
-  "000000000000004"
-};*/
+  "3JEDM1L0017028"
+};
 
 /** Receiving error message from Livox Lidar. */
 void OnLidarErrorStatusCallback(livox_status status, uint8_t handle, ErrorMessage *message) {
