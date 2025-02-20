@@ -41,7 +41,7 @@ sudo apt install cmake
 
 In the Livox SDK directory, run the following commands to compile the project:
 ```
-git clone https://github.com/Livox-SDK/Livox-SDK.git
+git clone https://github.com/simoneyyang/Livox-SDK.git
 cd Livox-SDK
 cd build && cmake ..
 make
